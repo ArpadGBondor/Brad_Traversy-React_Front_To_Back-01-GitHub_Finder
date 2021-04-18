@@ -12,15 +12,13 @@ exports.handler = async (event, context, callback) => {
       },
     });
 
-    console.log('WTF?');
-
-    let data = response;
-    await pass(data);
+    let data = response.data;
+    return pass(data);
   } catch (err) {
     let error = {
       statusCode: err.statusCode || 500,
       body: JSON.stringify({ error: err.message }),
     };
-    await pass(error);
+    return pass(error);
   }
 };
