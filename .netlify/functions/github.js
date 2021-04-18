@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 exports.handler = async (event, context) => {
-  const pass = (body) => {
-    callback(null);
-  };
+  return process.env.SECRET;
 
   try {
     let response = await axios('https://api.github.com/users', {
