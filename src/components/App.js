@@ -15,14 +15,19 @@ class App extends Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const res = await axios('/.netlify/functions/github');
+    try {
+      const res = await axios('/.netlify/functions/github');
 
-    console.log(res);
-
-    this.setState({
-      users: res.data,
-      loading: false,
-    });
+      console.log('Response');
+      console.log(res);
+      this.setState({
+        users: res.data,
+        loading: false,
+      });
+    } catch (err) {
+      console.log('Error');
+      console.log(err);
+    }
   }
 
   render() {
