@@ -4,7 +4,7 @@ import Navbar from './layout/Navbar.js';
 import Users from './users/Users.js';
 
 import './App.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 class App extends Component {
   state = {
@@ -15,9 +15,9 @@ class App extends Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const res = await fetch('../../.netlify/functions/github');
+    const res = await axios('../../.netlify/functions/github');
 
-    console.log(res.json());
+    console.log(res);
 
     this.setState({
       users: res.data,
