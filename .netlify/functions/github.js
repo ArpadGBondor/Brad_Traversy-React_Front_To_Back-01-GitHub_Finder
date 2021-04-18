@@ -12,7 +12,9 @@ exports.handler = async (event, context, callback) => {
       },
     });
 
-    let data = response.data;
+    console.log('WTF?');
+
+    let data = response;
     await pass(data);
   } catch (err) {
     let error = {
