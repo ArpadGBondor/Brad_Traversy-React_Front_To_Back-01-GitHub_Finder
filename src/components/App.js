@@ -15,7 +15,7 @@ class App extends Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const res = await axios('../../.netlify/functions/github');
+    const res = await axios('/.netlify/functions/helloWorld');
 
     console.log(res);
 
