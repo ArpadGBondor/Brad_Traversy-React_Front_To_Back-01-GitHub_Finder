@@ -16,7 +16,7 @@ class App extends Component {
     this.setState({ loading: true });
 
     try {
-      const res = await axios('/.netlify/functions/helloWorld');
+      const res = await axios('/.netlify/functions/github');
 
       // let res = await axios('https://api.github.com/users', {
       //   headers: {
