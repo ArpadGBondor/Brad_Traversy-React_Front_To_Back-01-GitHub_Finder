@@ -1,8 +1,8 @@
-import axios from 'axios'
+// import axios from 'axios'
 
 exports.handler = async function (event, context) {
-  return { statusCode: 200, body: JSON.stringify({ message: process.env.SECRET }) }
-}
+  return { statusCode: 200, body: JSON.stringify({ message: process.env.SECRET }) };
+};
 
 // exports.handler = async function (event, context) {
 //   return { statusCode: 200, body: JSON.stringify({ message: process.env.SECRET }) };
