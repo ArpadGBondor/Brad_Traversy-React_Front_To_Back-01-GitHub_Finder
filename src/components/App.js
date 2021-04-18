@@ -13,7 +13,7 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    this.setState({ loading: true });
+    this.setState({ users: [], loading: true });
 
     try {
       const res = await axios('../../.netlify/functions/github');
