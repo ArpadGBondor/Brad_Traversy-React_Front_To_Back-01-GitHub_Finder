@@ -17,7 +17,7 @@ class App extends Component {
 
     const res = await fetch('../../.netlify/functions/github');
 
-    console.log(res);
+    console.log(res.body.json());
 
     this.setState({
       users: res.data,
