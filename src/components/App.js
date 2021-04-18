@@ -27,7 +27,7 @@ class App extends Component {
       console.log('Response');
       console.log(res);
       this.setState({
-        users: res.data,
+        users: typeof res.data === 'object' && res.data.isArray ? res.data : [],
         loading: false,
       });
     } catch (err) {
