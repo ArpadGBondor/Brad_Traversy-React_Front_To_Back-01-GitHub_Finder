@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const API_ENDPOINT = 'https://api.github.com/users'
 
 exports.handler = async (event, context) => {
