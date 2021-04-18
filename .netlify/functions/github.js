@@ -5,7 +5,7 @@ exports.handler = async function (event, context) {
     let response = await axios('https://api.github.com/users');
 
     let data = response;
-    return { statusCode: 200, body: JSON.stringify(data) };
+    return { statusCode: 200, body: data };
   } catch (err) {
     return {
       statusCode: 200,
