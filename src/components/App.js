@@ -18,6 +18,12 @@ class App extends Component {
     try {
       const res = await axios('/.netlify/functions/github');
 
+      // let res = await axios('https://api.github.com/users', {
+      //   headers: {
+      //     Authorization: `token ${process.env.REACT_APP_GITHUB_PUBLIC_ACCESS_TOKEN}`,
+      //   },
+      // });
+
       console.log('Response');
       console.log(res);
       this.setState({
