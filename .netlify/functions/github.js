@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
   const pass = (body) => {
-    callback(null, { statusCode: 200, body: JSON.stringify(body) });
+    callback(null);
   };
 
   try {
@@ -13,12 +13,12 @@ exports.handler = async (event, context, callback) => {
     });
 
     let data = response;
-    return pass(data);
+    return { statusCode: 200, body: JSON.stringify(data) };
   } catch (err) {
     let error = {
       statusCode: err.statusCode || 500,
       body: JSON.stringify({ error: err.message }),
     };
-    return pass(error);
+    return error;
   }
 };
