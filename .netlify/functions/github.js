@@ -1,8 +1,6 @@
 const axios = require('axios');
 
 exports.handler = async function (event, context) {
-  return { statusCode: 200, body: JSON.stringify({ message: process.env.SECRET }) };
-
   try {
     let response = await axios('https://api.github.com/users', {
       headers: {
@@ -13,6 +11,7 @@ exports.handler = async function (event, context) {
     let data = response;
     return { statusCode: 200, body: JSON.stringify(data) };
   } catch (err) {
+    return { statusCode: 200, body: JSON.stringify(err) };
     let error = {
       statusCode: err.statusCode || 500,
       body: JSON.stringify({ error: err.message }),
