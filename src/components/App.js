@@ -15,9 +15,7 @@ class App extends Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const res = await fetch('../../.netlify/functions/github', {
-      method: 'GET',
-    });
+    const res = await fetch('../../.netlify/functions/github');
 
     console.log(res.data);
 
