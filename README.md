@@ -1,5 +1,9 @@
 # Brad Traversy - React Front To Back - 01 - GitHub Finder
 
+## Deployed
+
+- [On Netlify](https://gabriels-react-front-to-back-01-github-finder.netlify.app/)
+
 ## Udemy - [Brad Traversy - React Front To Back](https://www.udemy.com/course/modern-react-front-to-back/)
 
 - Section 2: Project 1 Start [Github Finder] & React Setup
@@ -15,24 +19,15 @@
 - React.js
 - GitHub API
 
-## Deployed
+## Mayor changes:
 
-- On Netlify ( - Not yet - )
+ - I'm using serverless functions on Netlify to keep my secret API key hidden.
+ - I'm using personal access token for authentication, because the oAuth authentication used in the tutorial is deprecated.
 
-## Environment variables:
+## Environment variable: 
 
 - GITHUB_PUBLIC_ACCESS_TOKEN - Register your own [Personal access token](https://github.com/settings/tokens)
 
-## Original Course Code & Resources:
+## Original Course Code:
 
-- The final code for this project can be found in this Github repo:
-  - https://github.com/bradtraversy/github-finder
-- Docs for the Github API:
-  - https://developer.github.com/v3/
-- To Register Your Github App & Get Keys:
-  - https://github.com/settings/applications/new
-- API Endpoints We Will Be Working With:
-  - https://api.github.com/users
-  - https://api.github.com/search/users?q=brad
-  - https://api.github.com/users/bradtraversy
-  - https://api.github.com/users/bradtraversy/repos
+- The original code for this project can be found in [this Github repo](https://github.com/bradtraversy/github-finder)
