@@ -28,7 +28,6 @@ async function handleGetRequest(event, context, callback) {
       body: 'ERROR-400: Bad Request.',
     };
   }
-  console.log(`https://api.github.com/users/${query}`);
   try {
     const { data } = await axios(`https://api.github.com/users/${query}`, {
       headers: {

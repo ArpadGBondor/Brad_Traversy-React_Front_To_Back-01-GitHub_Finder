@@ -21,14 +21,13 @@ exports.handler = async (event, context, callback) => {
 };
 
 async function handleGetRequest(event, context, callback) {
-  const { user, repo } = event.queryStringParameters;
+  const { user } = event.queryStringParameters;
   if (!user) {
     return {
       statusCode: 400,
       body: 'ERROR-400: Bad Request.',
     };
   }
-  console.log(`https://api.github.com/users/${user}/repos?per_page=5&sort=created:asc`);
   try {
     const { data } = await axios(`https://api.github.com/users/${user}/repos?per_page=5&sort=created:asc`, {
       headers: {

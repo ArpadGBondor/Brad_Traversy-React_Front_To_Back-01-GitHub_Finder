@@ -22,7 +22,6 @@ exports.handler = async (event, context, callback) => {
 
 async function handleGetRequest(event, context, callback) {
   const { query } = event.queryStringParameters;
-  console.log(`https://api.github.com/${query ? `search/users?q=${query}` : 'users'}`);
   try {
     const { data } = await axios(`https://api.github.com/${query ? `search/users?q=${query}` : 'users'}`, {
       headers: {
