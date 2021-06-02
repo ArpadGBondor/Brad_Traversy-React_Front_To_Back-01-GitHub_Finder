@@ -1,15 +1,15 @@
 # Brad Traversy - React Front To Back - 01 - GitHub Finder
 
-## Deployed
-
-- [On Netlify](https://gabriels-react-front-to-back-01-github-finder.netlify.app/)
-
 ## Udemy - [Brad Traversy - React Front To Back](https://www.udemy.com/course/modern-react-front-to-back/)
 
 - Section 2: Project 1 Start [Github Finder] & React Setup
 - Section 3: Components, State & Props
 - Section 4: Events, Passing Props, React Router & More
 - Section 5: Refactoring To Hooks & Context
+
+## Deployed
+
+- [On Netlify](https://gabriels-react-front-to-back-01-github-finder.netlify.app/)
 
 ## Used Tools:
 
