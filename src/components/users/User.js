@@ -6,9 +6,12 @@ import GithubContext from '../../context/github/githubContext';
 
 const User = ({ match }) => {
   const githubContext = useContext(GithubContext);
+
+  const { getUser, getUserRepos, user, loadingUser, loadingRepos } = githubContext;
+
   useEffect(() => {
-    githubContext.getUser(match.params.login);
-    githubContext.getUserRepos(match.params.login);
+    getUser(match.params.login);
+    getUserRepos(match.params.login);
     // We need the next comment to disable a warning message.
     // We use an empty dependency array intentionally, because we only want to run the function once.
     // eslint-disable-next-line
@@ -28,14 +31,14 @@ const User = ({ match }) => {
     public_repos,
     public_gists,
     hireable,
-  } = githubContext.user;
+  } = user;
 
   return (
     <Fragment>
       <Link to="/" className="btn btn-light">
         Back To Search
       </Link>
-      {githubContext.loadingUser || githubContext.loadingRepos ? (
+      {loadingUser || loadingRepos ? (
         <Spinner />
       ) : (
         <Fragment>
@@ -86,7 +89,7 @@ const User = ({ match }) => {
             <div className="badge badge-warning">Public Repos: {public_repos}</div>
             <div className="badge badge-dark">Public Gists: {public_gists}</div>
           </div>
-          <Repos repos={githubContext.repos} />
+          <Repos />
         </Fragment>
       )}
     </Fragment>

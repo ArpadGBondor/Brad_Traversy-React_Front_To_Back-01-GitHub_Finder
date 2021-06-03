@@ -7,12 +7,14 @@ const Search = (props) => {
   const githubContext = useContext(GithubContext);
   const [text, setText] = useState('');
 
+  const { users, searchUsers, clearUsers } = githubContext;
+
   const onSubmit = async (e) => {
     e.preventDefault();
     if (text === '') {
       alertContext.setAlert('Please enter something', 'light');
     } else {
-      githubContext.searchUsers(text);
+      searchUsers(text);
       setText('');
     }
   };
@@ -25,8 +27,8 @@ const Search = (props) => {
         <input type="text" name="text" placeholder="Search Users..." value={text} onChange={onChange} />
         <input type="submit" value="Search" className="btn btn-dark btn-block" />
       </form>
-      {githubContext.users.length > 0 && (
-        <button className="btn btn-light btn-block" onClick={githubContext.clearUsers}>
+      {users.length > 0 && (
+        <button className="btn btn-light btn-block" onClick={clearUsers}>
           Clear
         </button>
       )}
